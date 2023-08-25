@@ -1,0 +1,62 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* Form içeriği */
+.form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Boşluk ayarlayın */
+}
+
+/* Başlık alanı */
+.fs-3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align:center;
+}
+
+/* Form içeriği - Label */
+.form-label {
+    font-weight: bold;
+}
+
+
+
+/* Hata mesajları */
+.form-text {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Giriş butonu */
+.btn-primary {
+    padding: 8px 16px; /* İnce uzun buton */
+    font-size: 16px;
+    width: 100%; /* Butonun genişliği formun genişliği kadar */
+}
+
+/* Kayıt olma linki */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.show-hide-button {
+    position: absolute;
+    top: 75%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 1;
+}

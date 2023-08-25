@@ -1,0 +1,122 @@
+<div class="container">
+    <form class="border ps-3 rounded-3" [formGroup]="registerForm" (ngSubmit)="registerSubmited()">
+      <div class="row g-0">
+        <div class="col text center p-2 mb-3 bg-light">
+          <span class="fs-3">{{ 'Kayıt Formu' | translate }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="isim" class="form-label">{{ 'İsim' | translate }}</label>
+          <input type="text" class="form-control" id="isim" formControlName="isim">
+          <div class="form-text text-danger" *ngIf="Isim.errors?.['required'] && (Isim.touched || Isim.dirty)">
+            {{ 'İsim gerekli.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="Isim.errors?.['minlength'] && (Isim.touched || Isim.dirty)">
+            {{ 'İsim yeterince uzun değil.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="Isim.errors?.['pattern']">
+            {{ 'İsim harf ile başlamalı.' | translate }}
+          </div>
+        </div>
+        <div class="col">
+          <label for="soyisim" class="form-label">{{ 'Soyisim' | translate }}</label>
+          <input type="text" class="form-control" id="soyisim" formControlName="soyisim">
+          <div class="form-text text-danger" *ngIf="SoyIsim.errors?.['required'] && 
+            (SoyIsim.touched || SoyIsim.dirty)">
+            {{ 'Soyisim Gerekli.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="!!SoyIsim.errors?.['minlength'] && 
+            (SoyIsim.touched || SoyIsim.dirty)">
+            {{ 'Soyisim yeterince uzun değil.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="SoyIsim.errors?.['pattern'] && 
+            (SoyIsim.touched || SoyIsim.dirty)">
+            {{ 'Soyisim harf ile başlamalı.' | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="email" class="form-label">{{ 'Email' | translate }}</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          <div class="form-text text-danger" *ngIf="EMail.errors?.['required'] && (EMail.touched || EMail.dirty)">
+            {{ 'EMail gerekli.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="EMail.errors?.['email'] && (EMail.touched || EMail.dirty)">
+            {{ 'EMail geçersiz.' | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="telefonnumarasi" class="form-label">{{ 'Telefon Numarası' | translate }}</label>
+          <input type="text" class="form-control" id="telefonnumarasi" formControlName="telefonnumarasi">
+          <div class="form-text text-danger" *ngIf="TelefonNumarasi.errors?.['required'] && 
+            (TelefonNumarasi.touched || TelefonNumarasi.dirty)">
+            {{ 'Telefon Numarası gerekli.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="TelefonNumarasi.errors?.['pattern'] && 
+            (TelefonNumarasi.touched || TelefonNumarasi.dirty)">
+            {{ 'Telefon Numarası geçersiz.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="TelefonNumarasi.errors?.['minlength'] && 
+            (TelefonNumarasi.touched || TelefonNumarasi.dirty)">
+            {{ 'Telefon Numarası yeterince uzun değil.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="TelefonNumarasi.errors?.['maxlength'] && 
+            (TelefonNumarasi.touched || TelefonNumarasi.dirty)">
+            {{ 'Telefon Numarası fazla uzun.' | translate }}
+          </div>
+        </div>
+        <div class="col ps-3 mb-3">
+          <div class="m-1">{{ 'Cinsiyet' | translate }}</div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="e" id="erkek" formControlName="cinsiyet">
+            <label class="form-check-label" for="erkek">{{ 'Erkek' | translate }}</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="k" id="kadin" formControlName="cinsiyet">
+            <label class="form-check-label" for="kadin">{{ 'Kadın' | translate }}</label>
+          </div>
+          <div style="margin-top: 0px;" class="form-text text-danger" *ngIf="Cinsiyet.errors?.['required']">
+            {{ 'Cinsiyet seçiniz.' | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mb-3">
+          <label for="sifre" class="form-label">{{ 'Şifre' | translate }}</label>
+          <input type="password" class="form-control" id="sifre" formControlName="sifre">
+          <div class="form-text text-danger" *ngIf="Sifre.errors?.['required'] && 
+            (Sifre.touched || Sifre.dirty)">
+            {{ 'Şifre gerekli.' | translate }}
+          </div>
+          <div class="form-text text-danger" *ngIf="(Sifre.errors?.['minlength'] || Sifre.errors?.['maxlength']) && 
+            (Sifre.touched || Sifre.dirty)">
+            {{ 'Şifre 6-15 karakter uzunluğunda olmalı.' | translate }}
+          </div>
+        </div>
+        <div class="col mb-3">
+          <label for="sifreyeniden" class="form-check-label">{{ 'Şifreyi Yeniden Girin' | translate }}</label>
+          <input type="password" class="form-control" id="sifreyeniden" formControlName="sifreyeniden">
+          <div class="form-text text-danger" [ngStyle]="{'display': repeatPass}">
+            {{ 'Yeniden şifre geçersiz.' | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 offset-3">
+          <div class="d-grid">
+            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">{{ 'Gönder' | translate }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mt-3">
+          <span class="me-2">{{ 'Zaten hesabınız mı var?' | translate }}</span><a routerLink="/login">{{ 'Giriş Yapın' | translate }}</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  

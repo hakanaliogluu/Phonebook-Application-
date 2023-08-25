@@ -1,0 +1,73 @@
+<!-- <div class="dark-mode-toggle">
+  <button (click)="toggleDarkMode()">
+    {{ isDarkModeEnabled ? ('Aydınlık Mod' | translate) : ('Karanlık Mod' | translate) }}
+  </button>
+</div>
+-->
+
+<div class="dark-mode-toggle">
+  <button (click)="toggleDarkMode()">
+    {{ isDarkModeEnabled ? ('Aydınlık Mod' | translate) : ('Karanlık Mod' | translate) }}
+  </button>
+</div>
+
+<div class="language-buttons">
+  <button (click)="changeLanguage('tr')">Türkçe</button>
+  <button (click)="changeLanguage('en')">English</button>
+</div>
+
+  <router-outlet></router-outlet>
+
+
+
+
+<!--
+
+<div class="add-button-container">
+  <table>
+    <tr>
+      <td>
+        <button id="addNewPersonButton" class="btn btn-primary" (click)="initNewPerson()">Yeni Kişi Ekle</button>
+      </td>
+      <td>
+        <div class="search-container">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ara..."
+          [(ngModel)]="searchQuery"
+          (keyup)="filterPersons()"
+        />
+      </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<table class="table">
+  <thead>
+    <th>Ad</th>
+    <th>Soyad</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.ad }}</td>
+      <td>{{ person.soyad }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="viewPerson(person)">Görüntüle</button>
+        <button class="btn btn-primary" (click)="editPerson(person)">Düzenle</button>
+        <button class="btn btn-primary" (click)="deletePerson(person)">Sil</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-edit-person
+  [person]="personToEdit"
+  (personsUpdated)="updatePersonList($event)"
+></app-edit-person>
+
+<app-view-person [person]="selectedPerson" (close)="closePersonDetails()"></app-view-person>
+
+-->

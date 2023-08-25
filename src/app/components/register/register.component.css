@@ -1,0 +1,63 @@
+/* Örnek register.component.css */
+
+/* Formun ana container'ı */
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  /* Başlık alanı */
+  .fs-3 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    text-align:center;
+  }
+  /* İnput alanları ve etiketleri */
+  label {
+    font-weight: bold;
+    color: #555;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-text {
+    color: red;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  } 
+  /* Radio butonları ve etiketleri düzenleme */
+  input[type="radio"] {
+    margin-right: 8px;
+  }  
+  /* Gönder butonu */
+  button[type="submit"] {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  } 
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  } 
+  /* Hata mesajları */
+  .error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+  

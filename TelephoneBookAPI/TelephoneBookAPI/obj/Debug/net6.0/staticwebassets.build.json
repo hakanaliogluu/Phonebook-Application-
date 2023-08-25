@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ht32Rv5JvmqsyIMA5/dsk3/kpu9Gu7Azf2cIIm9MQ2I=",
+  "Source": "TelephoneBookAPI",
+  "BasePath": "_content/TelephoneBookAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

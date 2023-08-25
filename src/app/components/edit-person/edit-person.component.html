@@ -1,0 +1,23 @@
+<div *ngIf="person" class="person-form">
+    <div class="form-group">
+        <label for="ad">{{ 'Ad' | translate }}:</label>
+        <input [(ngModel)]="person.ad" type="text" class="form-control" id="ad" placeholder="{{ 'Ad' | translate }}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="soyad">{{ 'Soyad' | translate }}:</label>
+        <input [(ngModel)]="person.soyad" type="text" class="form-control" id="soyad" placeholder="{{ 'Soyad' | translate }}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="numara">{{ 'Numara' | translate }}:</label>
+        <input [(ngModel)]="person.numara" type="text" class="form-control" id="numara" placeholder="{{ 'Numara' | translate }}"/>
+    </div>
+
+    <div class="buttons">
+        <button (click)="updatePerson(person)" *ngIf="person.id" class="btn btn-primary">{{ 'Güncelle' | translate }}</button>
+        <button (click)="deletePerson(person)" *ngIf="person.id" class="btn btn-danger">{{ 'Sil' | translate }}</button>
+        <button (click)="createPerson(person)" *ngIf="!person.id" class="btn btn-success">{{ 'Oluştur' | translate }}</button>
+        <button (click)="closeForm()" class="btn btn-primary">{{ 'Kapat' | translate }}</button>
+    </div>
+</div>

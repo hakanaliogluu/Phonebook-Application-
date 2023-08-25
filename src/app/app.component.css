@@ -1,0 +1,33 @@
+/* Dark mode stilleri */
+.dark-mode {
+  background-color: #333; /* Arka plan rengini değiştirin */
+  color: #fff; /* Metin rengini değiştirin */
+}
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .dark-mode-toggle button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .language-buttons  {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
